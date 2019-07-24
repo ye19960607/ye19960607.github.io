@@ -8,27 +8,26 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>简易布局小技巧 | 长安</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在平时做一些简单网页的布局上我们可能常常会需要做一些类似的模块       如果每个模块都去设置宽高，设置浮动来固定位置会是件很麻烦的事情。我们可以先写一个container容器把主体固定到页面中间位置，并且设置一个max-width属性让网页自适应。….container{    display: block;    max-width:1080px;    margin: 0 auto;}…然">
+  <meta name="description" content="在平时做一些简单网页的布局上我们可能常常会需要做一些类似的模块">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简易布局小技巧">
 <meta property="og:url" content="http://yoursite.com/2019/07/24/简易布局小技巧/index.html">
 <meta property="og:site_name" content="长安">
-<meta property="og:description" content="在平时做一些简单网页的布局上我们可能常常会需要做一些类似的模块       如果每个模块都去设置宽高，设置浮动来固定位置会是件很麻烦的事情。我们可以先写一个container容器把主体固定到页面中间位置，并且设置一个max-width属性让网页自适应。….container{    display: block;    max-width:1080px;    margin: 0 auto;}…然">
+<meta property="og:description" content="在平时做一些简单网页的布局上我们可能常常会需要做一些类似的模块">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/07/24/简易布局小技巧/1.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/24/简易布局小技巧/2.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/24/简易布局小技巧/3.png">
-<meta property="og:updated_time" content="2019-07-24T14:10:29.633Z">
+<meta property="og:updated_time" content="2019-07-24T14:50:45.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简易布局小技巧">
-<meta name="twitter:description" content="在平时做一些简单网页的布局上我们可能常常会需要做一些类似的模块       如果每个模块都去设置宽高，设置浮动来固定位置会是件很麻烦的事情。我们可以先写一个container容器把主体固定到页面中间位置，并且设置一个max-width属性让网页自适应。….container{    display: block;    max-width:1080px;    margin: 0 auto;}…然">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/24/简易布局小技巧/1.png">
+<meta name="twitter:description" content="在平时做一些简单网页的布局上我们可能常常会需要做一些类似的模块">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/24/简易布局小技巧/2.png">
   
     <link rel="alternative" href="/atom.xml" title="长安" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -178,18 +177,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在平时做一些简单网页的布局上我们可能常常会需要做一些类似的模块</p>
-<img src="/2019/07/24/简易布局小技巧/1.png" title="column"> 
 <img src="/2019/07/24/简易布局小技巧/2.png" title="column"> 
+<a id="more"></a>
 <img src="/2019/07/24/简易布局小技巧/3.png" title="column"> 
-<p>如果每个模块都去设置宽高，设置浮动来固定位置会是件很麻烦的事情。<br>我们可以先写一个container容器把主体固定到页面中间位置，并且设置一个max-width属性让网页自适应。<br>…<br>.container{<br>    display: block;<br>    max-width:1080px;<br>    margin: 0 auto;<br>}<br>…<br>然后在每一列中我们可能需要不同大小的容器，那就继续写出不同宽度的column<br>…<br>.col-1,<br>.col-2,<br>.col-3,<br>.col-4,<br>.col-5,<br>.col-6,<br>.col-7,<br>.col-8,<br>.col-9{<br>    display: block;<br>    position: relative;<br>    min-height: 1px;<br>    float: left;<br>}<br>.col-1{<br>    width: 10%;<br>}</p>
-<p>.col-2{<br>    width: 20%;<br>}</p>
-<p>.col-3{<br>    width: 30%;<br>}</p>
-<p>.col-4{<br>    width: 40%;<br>}</p>
-<p>.col-5{<br>    width: 50%;<br>}</p>
-<p>.col-6{<br>    width: 60%;<br>}</p>
-<p>.col-7{<br>    width: 70%;<br>}</p>
-<p>.col-8{<br>    width: 80%;<br>}</p>
-<p>.col-9{<br>    width: 90%;<br>}<br>…<br>这样在之后的开发中只需要根据实际需求来选择合适的column就好了</p>
+<p>如果每个模块都去设置宽高，设置浮动来固定位置会是件很麻烦的事情。<br>我们可以先写一个container容器把主体固定到页面中间位置，并且设置一个max-width属性让网页自适应。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">    display: block;</span><br><span class="line">    max-width:1080px;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在每一列中我们可能需要不同大小的容器，那就继续写出不同宽度的column</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">.col-1,</span><br><span class="line">.col-2,</span><br><span class="line">.col-3,</span><br><span class="line">.col-4,</span><br><span class="line">.col-5,</span><br><span class="line">.col-6,</span><br><span class="line">.col-7,</span><br><span class="line">.col-8,</span><br><span class="line">.col-9&#123;</span><br><span class="line">    display: block;</span><br><span class="line">    position: relative;</span><br><span class="line">    min-height: 1px;</span><br><span class="line">    float: left;</span><br><span class="line">&#125;</span><br><span class="line">.col-1&#123;</span><br><span class="line">    width: 10%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-2&#123;</span><br><span class="line">    width: 20%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-3&#123;</span><br><span class="line">    width: 30%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-4&#123;</span><br><span class="line">    width: 40%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-5&#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-6&#123;</span><br><span class="line">    width: 60%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-7&#123;</span><br><span class="line">    width: 70%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-8&#123;</span><br><span class="line">    width: 80%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-9&#123;</span><br><span class="line">    width: 90%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样在之后的开发中只需要根据实际需求来选择合适的column就好了<br>demo的github地址:<a href="https://github.com/ye19960607/induction/tree/master/easy-layout" target="_blank" rel="noopener">https://github.com/ye19960607/induction/tree/master/easy-layout</a><br>        预览地址:<a href="https://ye19960607.github.io/induction/easy-layout/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/induction/easy-layout/index.html</a></p>
 
       
 
@@ -295,8 +292,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/07/24/qianduan/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">qianduan</div>
+    <a href="/2019/07/17/七月 你好/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">七月 你好</div>
       <i class="icon-circle-right"></i>
     </a>
   
