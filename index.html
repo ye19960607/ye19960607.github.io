@@ -150,6 +150,106 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-简单的响应式布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/29/简单的响应式布局/">简单的响应式布局</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/29/简单的响应式布局/" class="archive-article-date">
+  	<time datetime="2019-07-29T14:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>做一个简单的demo来学习下响应式布局
+这是pc端的页面
+{% asset_img 1.png 图1 %}
+这是移动端的页面
+{% asset_img 2.png 图2 %}
+{% asset_img 3.png 图3 %}
+其实主要来看从pc端到移动端的过程中主要还是一个width的变化，所以一个自适应的关键还是通过media query查询width而选择不同的css。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;(max-width: 798px)&quot; href=&quot;css/mobile.css&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+使用两张样式表，当宽度小于798px时，使用移动端样式表覆盖默认样式表，实现网页的自适应。
+
+然后再通过checkbox的伪类来实现菜单栏的显示与隐藏。
+这个是菜单栏的代码
+{% asset_img 4.png 图4n %}
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=&quot;menu-checkbox&quot; type=&quot;checkbox&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+先写出一个复选框
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#menu-checkbox:checked ~ .nav,</span><br><span class="line">#menu-checkbox:checked ~ .tag-list&#123;</span><br><span class="line">    display:block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+通过checkboxd的伪类和兄弟选择器来控制下面的nav和tag-list的display属性来实现显示和隐藏
+这个时候我们是通过一个复选框来控制
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;label id=&quot;menu-toggle&quot; for=&quot;menu-checkbox&quot;&gt;菜单&lt;/label&gt;</span><br></pre></td></tr></table></figure>
+
+接着再通过label的for属性将这个label绑定到我们控制复选框上
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#menu-toggle&#123;</span><br><span class="line">display: block;</span><br><span class="line">position: absolute;</span><br><span class="line">top: 10px;</span><br><span class="line">right: 0;</span><br><span class="line">font-size: 18px;</span><br><span class="line">font-weight: 100;</span><br><span class="line">color: rgba(255,255,255,.7);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+简单的设置一下label的css就达到了上图3中的移动端适配效果
+这就是一个简易的响应式布局模型</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/29/简单的响应式布局/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-简易布局小技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
