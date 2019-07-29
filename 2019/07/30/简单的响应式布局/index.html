@@ -18,9 +18,9 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/07/30/简单的响应式布局/1.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/30/简单的响应式布局/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/30/简单的响应式布局/3.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/30/简单的响应式布局/4.png">
-<meta property="og:updated_time" content="2019-07-29T16:10:25.427Z">
+<meta property="og:image" content="http://yoursite.com/2019/07/30/简单的响应式布局/3.png">
+<meta property="og:updated_time" content="2019-07-29T16:17:19.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单的响应式布局">
 <meta name="twitter:description" content="做一个简单的demo来学习下响应式布局这是pc端的页面">
@@ -179,17 +179,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>做一个简单的demo来学习下响应式布局<br>这是pc端的页面</p>
-<img src="/2019/07/30/简单的响应式布局/1.png" width="1">
+<img src="/2019/07/30/简单的响应式布局/1.png" title="图1"> 
 <a id="more"></a>    
 <p>这是移动端的页面</p>
-<img src="/2019/07/30/简单的响应式布局/2.png" width="2">
-<img src="/2019/07/30/简单的响应式布局/3.png" width="3">
+<img src="/2019/07/30/简单的响应式布局/2.png" title="图2">  
 <p>其实主要来看从pc端到移动端的过程中主要还是一个width的变化，所以一个自适应的关键还是通过media query查询width而选择不同的css。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;(max-width: 798px)&quot; href=&quot;css/mobile.css&quot;&gt;</span><br></pre></td></tr></table></figure>
 
 <p>使用两张样式表，当宽度小于798px时，使用移动端样式表覆盖默认样式表，实现网页的自适应。</p>
 <p>然后再通过checkbox的伪类来实现菜单栏的显示与隐藏。<br>这个是菜单栏的代码</p>
-<img src="/2019/07/30/简单的响应式布局/4.png" width="4">
+<img src="/2019/07/30/简单的响应式布局/4.png" title="图3"> 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=&quot;menu-checkbox&quot; type=&quot;checkbox&quot;&gt;</span><br></pre></td></tr></table></figure>
 
 <p>先写出一个复选框</p>
@@ -201,7 +200,8 @@
 <p>接着再通过label的for属性将这个label绑定到我们控制复选框上</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#menu-toggle&#123;</span><br><span class="line">display: block;</span><br><span class="line">position: absolute;</span><br><span class="line">top: 10px;</span><br><span class="line">right: 0;</span><br><span class="line">font-size: 18px;</span><br><span class="line">font-weight: 100;</span><br><span class="line">color: rgba(255,255,255,.7);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>简单的设置一下label的css就达到了上图3中的移动端适配效果<br>这就是一个简易的响应式布局模型</p>
+<img src="/2019/07/30/简单的响应式布局/3.png" title="图4"> 
+<p>简单的设置一下label的css就达到了上图4中的移动端适配效果<br>这就是一个简易的响应式布局模型<br>demo的github地址:<a href="https://github.com/ye19960607/induction/tree/master/easy-blog" target="_blank" rel="noopener">https://github.com/ye19960607/induction/tree/master/easy-blog</a><br>        预览地址:<a href="https://ye19960607.github.io/induction/easy-blog/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/induction/easy-blog/index.html</a></p>
 
       
 
