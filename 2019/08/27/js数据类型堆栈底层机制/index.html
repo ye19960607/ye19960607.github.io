@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 长安</title>
+  <title>js数据类型堆栈底层机制 | 长安</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="长安">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="1234567891011let a = 12;let b = a;b = 13;consloe.log(a);let n = &amp;#123;   name: 张三;&amp;#125;;let m = n;m.name = &amp;apos;李四&amp;apos;;console.log(n.name);">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js数据类型堆栈底层机制">
+<meta property="og:url" content="http://yoursite.com/2019/08/27/js数据类型堆栈底层机制/index.html">
 <meta property="og:site_name" content="长安">
+<meta property="og:description" content="1234567891011let a = 12;let b = a;b = 13;consloe.log(a);let n = &amp;#123;   name: 张三;&amp;#125;;let m = n;m.name = &amp;apos;李四&amp;apos;;console.log(n.name);">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/08/27/js数据类型堆栈底层机制/基本类型.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/27/js数据类型堆栈底层机制/引用类型.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/27/js数据类型堆栈底层机制/定义.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/27/js数据类型堆栈底层机制/练习题.png">
+<meta property="og:updated_time" content="2019-08-28T06:24:32.472Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="长安">
+<meta name="twitter:title" content="js数据类型堆栈底层机制">
+<meta name="twitter:description" content="1234567891011let a = 12;let b = a;b = 13;consloe.log(a);let n = &amp;#123;   name: 张三;&amp;#125;;let m = n;m.name = &amp;apos;李四&amp;apos;;console.log(n.name);">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/27/js数据类型堆栈底层机制/基本类型.png">
   
     <link rel="alternative" href="/atom.xml" title="长安" type="application/atom+xml">
   
@@ -158,219 +168,294 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js数据类型堆栈底层机制" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js数据类型堆栈底层机制
+    </h1>
+  
+
+        
+        <a href="/2019/08/27/js数据类型堆栈底层机制/" class="archive-article-date">
+  	<time datetime="2019-08-27T14:23:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let a = 12;</span><br><span class="line">let b = a;</span><br><span class="line">b = 13;</span><br><span class="line">consloe.log(a);</span><br><span class="line"></span><br><span class="line">let n = &#123;</span><br><span class="line">   name: 张三;</span><br><span class="line">&#125;;</span><br><span class="line">let m = n;</span><br><span class="line">m.name = &apos;李四&apos;;</span><br><span class="line">console.log(n.name);</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+<ul>
+<li>浏览器想要执行js代码<ul>
+<li>1.从电脑内存中分配出一块内存，用来执行代码(栈内存 =&gt; Stack)</li>
+<li>2.分配一个主线程用来自上而下执行js代码</li>
+</ul>
+</li>
+</ul>
+<h2 id="简单值得存储"><a href="#简单值得存储" class="headerlink" title="简单值得存储"></a>简单值得存储</h2><ul>
+<li>let a = 12<ul>
+<li><ol>
+<li>创建变量a，放到当前栈内存变量存储区域中</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>创建一个值12，把它存储到当前栈内存值区域中(简单的基本类型值是这样存储的，复杂的引用类型值不是这样做的)</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>=为赋值，其实赋值是让变量和值相互关联的过程 </li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2019/08/27/js数据类型堆栈底层机制/基本类型.png" title="基本类型">
+<ul>
+<li>主线程工作流程<ul>
+<li>1.创建存储变量a，创建存储值12，将变量a与值12关联</li>
+<li>2.创建存储变量b，将变量b与值12关联</li>
+<li>3.创建存储值13，将变量b与值13关联(一个变量只能同时关联一个值)</li>
+</ul>
+</li>
+</ul>
+<h2 id="复杂值-引用类型值-的存储，也分为三个步骤："><a href="#复杂值-引用类型值-的存储，也分为三个步骤：" class="headerlink" title="复杂值(引用类型值)的存储，也分为三个步骤："></a>复杂值(引用类型值)的存储，也分为三个步骤：</h2><ul>
+<li>let n = {}<ul>
+<li><ol>
+<li>在内存中分配出一块新的内存，用来存储引用类型值(堆内存 =&gt; heap) =&gt;内存有一个16进制地址</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>把对象中的键值对(属性名：属性值)依次存储到堆内存中</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>把堆内存地址和变量关联起来</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2019/08/27/js数据类型堆栈底层机制/引用类型.png" title="引用类型">
+<ul>
+<li>主线程工作流程<ul>
+<li>1.创建存储变量n，创建堆内存AAAFFF000，AAAFFF000中创建{name:”张三”}<br>同时在值存储空间中会有值AAAFFF000，并与变量n关联</li>
+<li>2.创建存储变量m，将变量b与值AAAFFF000关联</li>
+<li>3.修改堆内存AAAFFF000中属性名name的属性值为”李四”(n与m共用一个存储在堆内存中的值)</li>
+</ul>
+</li>
+</ul>
+<img src="/2019/08/27/js数据类型堆栈底层机制/定义.png" title="定义">
+
+
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let n = [10,20];</span><br><span class="line">let m = n;</span><br><span class="line">let x = m;</span><br><span class="line">m[0] = 100;</span><br><span class="line">x = [30,40];</span><br><span class="line">x[0] = 200;</span><br><span class="line">m = x;</span><br><span class="line">m[1] = 300;</span><br><span class="line">n[2] = 400;</span><br><span class="line">console.log(n,m,x;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let a = &#123;n:1&#125;;</span><br><span class="line">let b = a;</span><br><span class="line">a.x = b;</span><br></pre></td></tr></table></figure>
+
+<img src="/2019/08/27/js数据类型堆栈底层机制/练习题.png" title="练习题">
+
+<ul>
+<li>主要难点为在执行{x = [30,40]}时，栈内存会创建一个新的堆内存，一个新的空间去存储值。</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/20/最难忘却故人诗/" class="archive-article-date">
-  	<time datetime="2019-08-20T08:33:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/20/最难忘却故人诗/">最难忘却是故人诗</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/27/js数据类型堆栈底层机制/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/20/方格加载效果/" class="archive-article-date">
-  	<time datetime="2019-08-20T07:42:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/27/按钮悬浮动态效果/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">按钮悬浮动态效果</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/20/方格加载效果/">方格加载效果</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">case</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简单值得存储"><span class="toc-number">1.</span> <span class="toc-text">简单值得存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂值-引用类型值-的存储，也分为三个步骤："><span class="toc-number">2.</span> <span class="toc-text">复杂值(引用类型值)的存储，也分为三个步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">2.1.</span> <span class="toc-text">题目</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/30/简单的响应式布局/" class="archive-article-date">
-  	<time datetime="2019-07-29T16:05:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
-</a>
-        </div>
-    	 
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="js数据类型堆栈底层机制" data-title="js数据类型堆栈底层机制" data-url="http://yoursite.com/2019/08/27/js数据类型堆栈底层机制/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/30/简单的响应式布局/">简单的响应式布局</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/08/27/js数据类型堆栈底层机制/", 
+    sourceId: "js数据类型堆栈底层机制",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/24/简易布局小技巧/" class="archive-article-date">
-  	<time datetime="2019-07-24T12:42:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/24/简易布局小技巧/">简易布局小技巧</a>
-    </h1>
+  <div id="SOHUCS" sid="js数据类型堆栈底层机制" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/17/七月 你好/" class="archive-article-date">
-  	<time datetime="2019-07-16T16:22:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/17/七月 你好/">七月 你好</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -399,8 +484,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
