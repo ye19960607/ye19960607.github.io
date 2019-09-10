@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>长安</title>
+  <title>纯css画一只动态狗 | 长安</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="长安">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="keywords" content="前端,css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="纯css画一只动态狗">
+<meta property="og:url" content="http://yoursite.com/2019/09/11/纯css画一只动态狗/index.html">
 <meta property="og:site_name" content="长安">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/09/11/纯css画一只动态狗/1.gif">
+<meta property="og:updated_time" content="2019-09-10T20:20:10.893Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="长安">
+<meta name="twitter:title" content="纯css画一只动态狗">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/11/纯css画一只动态狗/1.gif">
   
     <link rel="alternative" href="/atom.xml" title="长安" type="application/atom+xml">
   
@@ -158,16 +162,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-纯css画一只动态狗" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-纯css画一只动态狗" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/11/纯css画一只动态狗/">纯css画一只动态狗</a>
+    <h1 class="article-title" itemprop="name">
+      纯css画一只动态狗
     </h1>
   
 
@@ -181,9 +183,84 @@
     <div class="article-entry" itemprop="articleBody">
       
         <img src="/2019/09/11/纯css画一只动态狗/1.gif" title="效果图">
-        
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>整个图案主要是运用了css的transform(转换)，border-radius(圆角)，box-shadow(阴影)，以及animation(动画)来绘制完成。</li>
+</ul>
+<ul>
+<li><p>然后整个图案是分解成很多小部分然后通过position来拼接的。</p>
+</li>
+<li><p>最后动画效果是通过改变个别部位的长度或者定位来实现的。</p>
+</li>
+</ul>
+<h2 id="html部分"><a href="#html部分" class="headerlink" title="html部分"></a>html部分</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;dog center&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;forehead center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;face center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;chin center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;ear&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;ear right&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;birthmark&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;eye&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;pupil&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;eye right&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;pupil&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;nose center&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;nostril&quot;&gt;&lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;nostril right&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;mouth center&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;teen&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;teen right&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;tongue center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;body center&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;arm&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;arm right&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;leg&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;foot&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;leg right&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;foot&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;belly center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>从面部到眼鼻到主体到腿脚细分为很多部分</p>
+</li>
+<li><p>然后因为很多部位的颜色是一致的，同时也是为了方便后期修改这里引入一个css变量的知识。</p>
+</li>
+<li><p>css变量有两种形式：<br> 1.以变量，就是拥有合法标识符和合法的值，可以被使用在任意的地方，可以使用var()函数使用变量<br> 2.自定义属性，这些属性使用–<em>where</em>的特殊格式做为名字</p>
+</li>
+<li><p>基本用法<br> 声明一个变量：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   :root &#123;</span><br><span class="line">  --hl:#1b2f90;</span><br><span class="line">  --bg:#f9f9f6;</span><br><span class="line">  --t: 2s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  在这个案例中声明了三个变量，狗的背景颜色–bg，耳朵和眼睛阴影轮廓的颜色–hl，以及后期动画的时间–t<br>然后是使用变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  .chin&#123;</span><br><span class="line">  width: 104px;</span><br><span class="line">  height: 36px;</span><br><span class="line">  background: var(--bg); /*这里就是引入的变量*/</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  top: 60px;</span><br><span class="line">  border-radius: 52px / 0px 0px 36px 36px;</span><br><span class="line">  z-index: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在这个图案中因为眼睛耳朵胳臂腿这些都是一对的，意味着是可复用的。所以这次是选择写出左边的右边通过转换得到</p>
+<ul>
+<li><p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;ear&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;ear right&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这里左右耳是通过两个div盒子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  .ear&#123;</span><br><span class="line">  width: 16px;</span><br><span class="line">  height: 70px;</span><br><span class="line">  background: var(--hl);</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 50%;</span><br><span class="line">  top: 34px;</span><br><span class="line">  z-index: 0;</span><br><span class="line">  transform-origin: 50% 0;</span><br><span class="line">  transform: translate(-42px,0) rotate(10deg);</span><br><span class="line">  animation: rotate var(--t) ease-out infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>这里给盒子模型设置了宽高，背景引入了变量–hl，设置了50%的圆角使盒子由矩形变成椭圆形。<br>调整好盒子的形状后，通过position属性调整盒子相对于父元素(子绝父相)的left与top来对盒子进行定位。<br>用transform-origin设置好的盒子偏移原点<br>再是通过translate(-42px,0)来对盒子进行x轴的偏移。用rotate进行旋转调整。<br>最后设置一下盒子的z-index，z轴的定位为0(给面部设置为1)让耳朵被面部遮盖。<br>最后就是设置耳朵晃动的动画了<br>设置一个名为rotate的动画，时间引入变量–t，动画过程由慢到快，一直循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  @keyframes rotate &#123;</span><br><span class="line">  0% &#123;transform: translate(-42px,0) rotate(10deg);&#125;</span><br><span class="line">  50% &#123;transform: translate(-42px,0) rotate(30deg);&#125;</span><br><span class="line">  100% &#123;transform: translate(-42px,0) rotate(10deg);&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个动画是为3桢，改变盒子根据设置的原点的旋转角度来完成耳朵摆动的动画。<br>这就完成了左耳的部分</p>
+<ul>
+<li><p>到右耳就只需要通过原点进行一个翻转，然后偏移定位就可以了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.ear.right&#123;</span><br><span class="line">  transform: scale(-1,1) translate(-26px,0) rotate(10deg);</span><br><span class="line">  animation: rotate-r var(--t) ease-out infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>需要注意的是这里scale和translate，rotate的顺序是有影响的，scale放在前面。<br>然后就是右耳的摆动动画</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   @keyframes rotate-r &#123;</span><br><span class="line">  0% &#123;transform: scale(-1,1) translate(-26px,0) rotate(10deg);&#125;</span><br><span class="line">  50% &#123;transform: scale(-1,1) translate(-26px,0) rotate(30deg);&#125;</span><br><span class="line">  100% &#123;transform: scale(-1,1) translate(-26px,0) rotate(10deg);&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>其他部位就是大同小异了。(源码见下方github地址)</li>
+</ul>
+</li>
+</ul>
+<p>github地址：<a href="https://github.com/ye19960607/induction/tree/master/css3-dog" target="_blank" rel="noopener">https://github.com/ye19960607/induction/tree/master/css3-dog</a><br>预览地址：<a href="https://ye19960607.github.io/induction/css3-dog/dog.html" target="_blank" rel="noopener">https://ye19960607.github.io/induction/css3-dog/dog.html</a></p>
+</li>
+</ul>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -207,16 +284,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/11/纯css画一只动态狗/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/11/纯css画一只动态狗/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/05/按钮边界动画/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">按钮边界动画</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -231,403 +367,73 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-按钮边界动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/05/按钮边界动画/">按钮边界动画</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/05/按钮边界动画/" class="archive-article-date">
-  	<time datetime="2019-09-05T09:01:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/2019/09/05/按钮边界动画/1.gif" title="效果图">
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">case</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/05/按钮边界动画/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html部分"><span class="toc-number">2.</span> <span class="toc-text">html部分</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-背景流星效果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/02/背景流星效果/">背景流星效果</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/02/背景流星效果/" class="archive-article-date">
-  	<time datetime="2019-09-02T11:04:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/2019/09/02/背景流星效果/1.gif" title="效果图">
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">case</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/02/背景流星效果/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-文字显示图片背景" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/28/文字显示图片背景/">文字显示图片背景</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/28/文字显示图片背景/" class="archive-article-date">
-  	<time datetime="2019-08-28T09:35:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/2019/08/28/文字显示图片背景/1.png" title="效果图">
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">case</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/28/文字显示图片背景/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js数据类型堆栈底层机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/27/js数据类型堆栈底层机制/">js数据类型堆栈底层机制</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/27/js数据类型堆栈底层机制/" class="archive-article-date">
-  	<time datetime="2019-08-27T14:23:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let a = 12;</span><br><span class="line">let b = a;</span><br><span class="line">b = 13;</span><br><span class="line">consloe.log(a);</span><br><span class="line"></span><br><span class="line">let n = &#123;</span><br><span class="line">   name: 张三;</span><br><span class="line">&#125;;</span><br><span class="line">let m = n;</span><br><span class="line">m.name = &apos;李四&apos;;</span><br><span class="line">console.log(n.name);</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/27/js数据类型堆栈底层机制/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-按钮悬浮动态效果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/27/按钮悬浮动态效果/">按钮悬浮动态效果</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/27/按钮悬浮动态效果/" class="archive-article-date">
-  	<time datetime="2019-08-27T07:47:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/2019/08/27/按钮悬浮动态效果/1.gif" title="效果图">
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">case</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/27/按钮悬浮动态效果/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="纯css画一只动态狗" data-title="纯css画一只动态狗" data-url="http://yoursite.com/2019/09/11/纯css画一只动态狗/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/09/11/纯css画一只动态狗/", 
+    sourceId: "纯css画一只动态狗",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+  
+  <div id="SOHUCS" sid="纯css画一只动态狗" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
+  
+
+  
+
   
 
 
@@ -655,8 +461,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
