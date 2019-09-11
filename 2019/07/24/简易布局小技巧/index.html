@@ -190,14 +190,15 @@
 <img src="/2019/07/24/简易布局小技巧/11.png" title="column"> 
 <a id="more"></a>
 <img src="/2019/07/24/简易布局小技巧/22.png" title="column"> 
-<p>如果每个模块都去设置宽高，设置浮动来固定位置会是件很麻烦的事情。<br>我们可以先写一个container容器把主体固定到页面中间位置，并且设置一个max-width属性让网页自适应。</p>
+<p>如果每个模块都去设置宽高，设置浮动来固定位置会是件很麻烦的事情。<br>
+我们可以先写一个container容器把主体固定到页面中间位置，并且设置一个max-width属性让网页自适应。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">    display: block;</span><br><span class="line">    max-width:1080px;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>然后在每一列中我们可能需要不同大小的容器，那就继续写出不同宽度的column</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">.col-1,</span><br><span class="line">.col-2,</span><br><span class="line">.col-3,</span><br><span class="line">.col-4,</span><br><span class="line">.col-5,</span><br><span class="line">.col-6,</span><br><span class="line">.col-7,</span><br><span class="line">.col-8,</span><br><span class="line">.col-9&#123;</span><br><span class="line">    display: block;</span><br><span class="line">    position: relative;</span><br><span class="line">    min-height: 1px;</span><br><span class="line">    float: left;</span><br><span class="line">&#125;</span><br><span class="line">.col-1&#123;</span><br><span class="line">    width: 10%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-2&#123;</span><br><span class="line">    width: 20%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-3&#123;</span><br><span class="line">    width: 30%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-4&#123;</span><br><span class="line">    width: 40%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-5&#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-6&#123;</span><br><span class="line">    width: 60%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-7&#123;</span><br><span class="line">    width: 70%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-8&#123;</span><br><span class="line">    width: 80%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-9&#123;</span><br><span class="line">    width: 90%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这样在之后的开发中只需要根据实际需求来选择合适的column就好了<br>demo的github地址:<a href="https://github.com/ye19960607/induction/tree/master/easy-layout" target="_blank" rel="noopener">https://github.com/ye19960607/induction/tree/master/easy-layout</a><br>        预览地址:<a href="https://ye19960607.github.io/induction/easy-layout/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/induction/easy-layout/index.html</a></p>
-
+<p>这样在之后的开发中只需要根据实际需求来选择合适的column就好了<br>
+demo的github地址:<a href="https://github.com/ye19960607/induction/tree/master/easy-layout" target="_blank" rel="noopener">https://github.com/ye19960607/induction/tree/master/easy-layout</a><br>
+预览地址:<a href="https://ye19960607.github.io/induction/easy-layout/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/induction/easy-layout/index.html</a></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
       
 
       
@@ -490,6 +491,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
@@ -498,19 +507,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">case</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

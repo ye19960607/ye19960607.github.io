@@ -184,18 +184,21 @@
       
         <img src="/2019/08/27/按钮悬浮动态效果/1.gif" title="效果图">
 <a id="more"></a>
-<h2 id="html部分"><a href="#html部分" class="headerlink" title="html部分"></a>html部分</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">  &lt;button class=&quot;btn btn1&quot;&gt;hover me&lt;/button&gt;</span><br><span class="line">  &lt;button class=&quot;btn btn2&quot;&gt;hover me&lt;/button&gt;</span><br><span class="line">  &lt;button class=&quot;btn btn3&quot;&gt;hover me&lt;/button&gt;</span><br><span class="line">  &lt;button class=&quot;btn btn4&quot;&gt;hover me&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
+<h2 id="html部分"><a class="header-anchor" href="#html部分" aria-hidden="true">¶</a> html部分</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">  &lt;button class=&quot;btn btn1&quot;&gt;hover me&lt;/button&gt;</span><br><span class="line">  &lt;button class=&quot;btn btn2&quot;&gt;hover me&lt;/button&gt;</span><br><span class="line">  &lt;button class=&quot;btn btn3&quot;&gt;hover me&lt;/button&gt;</span><br><span class="line">  &lt;button class=&quot;btn btn4&quot;&gt;hover me&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>一个container容器包含四个按钮<h2 id="css部分"><a href="#css部分" class="headerlink" title="css部分"></a>css部分</h2></li>
+<li>一个container容器包含四个按钮</li>
+</ul>
+<h2 id="css部分"><a class="header-anchor" href="#css部分" aria-hidden="true">¶</a> css部分</h2>
+<ul>
 <li>…</li>
 <li>省略基础样式设计</li>
-<li>主要是通过设置按钮btn的伪元素来实现(css3中写法为::before,区分伪类和伪元素)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">.btn::before &#123;</span><br><span class="line">  content: &quot;&quot;;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 0%;</span><br><span class="line">  background: #3498db;</span><br><span class="line">  z-index: -1;</span><br><span class="line">  transition: 0.8s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.btn1::before,</span><br><span class="line">.btn3::before &#123;</span><br><span class="line">  top: 0;</span><br><span class="line">  border-radius: 0 0 50% 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.btn1:hover::before,</span><br><span class="line">.btn2:hover::before &#123;</span><br><span class="line">  height: 180%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>主要是通过设置按钮btn的伪元素来实现(css3中写法为::before,区分伪类和伪元素)</li>
 </ul>
-<p>github地址：<a href="https://github.com/ye19960607/case/tree/master/按钮悬浮动态效果" target="_blank" rel="noopener">https://github.com/ye19960607/case/tree/master/按钮悬浮动态效果</a><br>页面预览地址：<a href="https://ye19960607.github.io/case/按钮悬浮动态效果/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/case/按钮悬浮动态效果/index.html</a></p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">.btn::before &#123;</span><br><span class="line">  content: &quot;&quot;;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 0%;</span><br><span class="line">  background: #3498db;</span><br><span class="line">  z-index: -1;</span><br><span class="line">  transition: 0.8s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.btn1::before,</span><br><span class="line">.btn3::before &#123;</span><br><span class="line">  top: 0;</span><br><span class="line">  border-radius: 0 0 50% 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.btn1:hover::before,</span><br><span class="line">.btn2:hover::before &#123;</span><br><span class="line">  height: 180%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>github地址：<a href="https://github.com/ye19960607/case/tree/master/%E6%8C%89%E9%92%AE%E6%82%AC%E6%B5%AE%E5%8A%A8%E6%80%81%E6%95%88%E6%9E%9C" target="_blank" rel="noopener">https://github.com/ye19960607/case/tree/master/按钮悬浮动态效果</a><br>
+页面预览地址：<a href="https://ye19960607.github.io/case/%E6%8C%89%E9%92%AE%E6%82%AC%E6%B5%AE%E5%8A%A8%E6%80%81%E6%95%88%E6%9E%9C/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/case/按钮悬浮动态效果/index.html</a></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
       
 
       
@@ -341,7 +344,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#html部分"><span class="toc-number">1.</span> <span class="toc-text">html部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css部分"><span class="toc-number">2.</span> <span class="toc-text">css部分</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#html部分"><span class="toc-number">1.</span> <span class="toc-text">¶ html部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css部分"><span class="toc-number">2.</span> <span class="toc-text">¶ css部分</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -492,6 +495,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
@@ -500,19 +511,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">case</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

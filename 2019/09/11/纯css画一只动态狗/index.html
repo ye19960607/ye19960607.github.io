@@ -184,60 +184,73 @@
       
         <img src="/2019/09/11/纯css画一只动态狗/1.gif" title="效果图">
 <a id="more"></a>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>整个图案主要是运用了css的transform(转换)，border-radius(圆角)，box-shadow(阴影)，以及animation(动画)来绘制完成。</li>
-</ul>
+<h2 id="前言"><a class="header-anchor" href="#前言" aria-hidden="true">¶</a> 前言</h2>
 <ul>
-<li><p>然后整个图案是分解成很多小部分然后通过position来拼接的。</p>
+<li>
+<p>整个图案主要是运用了css的transform(转换)，border-radius(圆角)，box-shadow(阴影)，以及animation(动画)来绘制完成。</p>
 </li>
-<li><p>最后动画效果是通过改变个别部位的长度或者定位来实现的。</p>
+<li>
+<p>然后整个图案是分解成很多小部分然后通过position来拼接的。</p>
+</li>
+<li>
+<p>最后动画效果是通过改变个别部位的长度或者定位来实现的。</p>
 </li>
 </ul>
-<h2 id="html部分"><a href="#html部分" class="headerlink" title="html部分"></a>html部分</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;dog center&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;forehead center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;face center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;chin center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;ear&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;ear right&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;birthmark&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;eye&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;pupil&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;eye right&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;pupil&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;nose center&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;nostril&quot;&gt;&lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;nostril right&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;mouth center&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;teen&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;teen right&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;tongue center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;body center&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;arm&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;arm right&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;leg&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;foot&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;leg right&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;foot&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;belly center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
+<h2 id="html部分"><a class="header-anchor" href="#html部分" aria-hidden="true">¶</a> html部分</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;dog center&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;forehead center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;face center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;chin center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;ear&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;ear right&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;birthmark&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;eye&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;pupil&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;eye right&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;pupil&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;nose center&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;nostril&quot;&gt;&lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;nostril right&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;mouth center&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;teen&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;teen right&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;tongue center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;body center&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;arm&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;arm right&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;leg&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;foot&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;leg right&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;foot&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;belly center&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>从面部到眼鼻到主体到腿脚细分为很多部分</p>
+<li>
+<p>从面部到眼鼻到主体到腿脚细分为很多部分</p>
 </li>
-<li><p>然后因为很多部位的颜色是一致的，同时也是为了方便后期修改这里引入一个css变量的知识。</p>
+<li>
+<p>然后因为很多部位的颜色是一致的，同时也是为了方便后期修改这里引入一个css变量的知识。</p>
 </li>
-<li><p>css变量有两种形式：<br> 1.以变量，就是拥有合法标识符和合法的值，可以被使用在任意的地方，可以使用var()函数使用变量<br> 2.自定义属性，这些属性使用–<em>where</em>的特殊格式做为名字</p>
+<li>
+<p>css变量有两种形式：<br>
+1.以变量，就是拥有合法标识符和合法的值，可以被使用在任意的地方，可以使用var()函数使用变量<br>
+2.自定义属性，这些属性使用–<em>where</em>的特殊格式做为名字</p>
 </li>
-<li><p>基本用法<br> 声明一个变量：</p>
+<li>
+<p>基本用法<br>
+声明一个变量：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   :root &#123;</span><br><span class="line">  --hl:#1b2f90;</span><br><span class="line">  --bg:#f9f9f6;</span><br><span class="line">  --t: 2s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>  在这个案例中声明了三个变量，狗的背景颜色–bg，耳朵和眼睛阴影轮廓的颜色–hl，以及后期动画的时间–t<br>然后是使用变量：</p>
+<p>在这个案例中声明了三个变量，狗的背景颜色–bg，耳朵和眼睛阴影轮廓的颜色–hl，以及后期动画的时间–t<br>
+然后是使用变量：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  .chin&#123;</span><br><span class="line">  width: 104px;</span><br><span class="line">  height: 36px;</span><br><span class="line">  background: var(--bg); /*这里就是引入的变量*/</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  top: 60px;</span><br><span class="line">  border-radius: 52px / 0px 0px 36px 36px;</span><br><span class="line">  z-index: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>然后在这个图案中因为眼睛耳朵胳臂腿这些都是一对的，意味着是可复用的。所以这次是选择写出左边的右边通过转换得到</p>
 <ul>
-<li><p>例如：</p>
+<li>例如：</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;ear&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;ear right&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
 <p>这里左右耳是通过两个div盒子</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  .ear&#123;</span><br><span class="line">  width: 16px;</span><br><span class="line">  height: 70px;</span><br><span class="line">  background: var(--hl);</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 50%;</span><br><span class="line">  top: 34px;</span><br><span class="line">  z-index: 0;</span><br><span class="line">  transform-origin: 50% 0;</span><br><span class="line">  transform: translate(-42px,0) rotate(10deg);</span><br><span class="line">  animation: rotate var(--t) ease-out infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>这里给盒子模型设置了宽高，背景引入了变量–hl，设置了50%的圆角使盒子由矩形变成椭圆形。<br>调整好盒子的形状后，通过position属性调整盒子相对于父元素(子绝父相)的left与top来对盒子进行定位。<br>用transform-origin设置好的盒子偏移原点<br>再是通过translate(-42px,0)来对盒子进行x轴的偏移。用rotate进行旋转调整。<br>最后设置一下盒子的z-index，z轴的定位为0(给面部设置为1)让耳朵被面部遮盖。<br>最后就是设置耳朵晃动的动画了<br>设置一个名为rotate的动画，时间引入变量–t，动画过程由慢到快，一直循环</p>
+<p>这里给盒子模型设置了宽高，背景引入了变量–hl，设置了50%的圆角使盒子由矩形变成椭圆形。<br>
+调整好盒子的形状后，通过position属性调整盒子相对于父元素(子绝父相)的left与top来对盒子进行定位。<br>
+用transform-origin设置好的盒子偏移原点<br>
+再是通过translate(-42px,0)来对盒子进行x轴的偏移。用rotate进行旋转调整。<br>
+最后设置一下盒子的z-index，z轴的定位为0(给面部设置为1)让耳朵被面部遮盖。<br>
+最后就是设置耳朵晃动的动画了<br>
+设置一个名为rotate的动画，时间引入变量–t，动画过程由慢到快，一直循环</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  @keyframes rotate &#123;</span><br><span class="line">  0% &#123;transform: translate(-42px,0) rotate(10deg);&#125;</span><br><span class="line">  50% &#123;transform: translate(-42px,0) rotate(30deg);&#125;</span><br><span class="line">  100% &#123;transform: translate(-42px,0) rotate(10deg);&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这个动画是为3桢，改变盒子根据设置的原点的旋转角度来完成耳朵摆动的动画。<br>这就完成了左耳的部分</p>
+<p>这个动画是为3桢，改变盒子根据设置的原点的旋转角度来完成耳朵摆动的动画。<br>
+这就完成了左耳的部分</p>
 <ul>
-<li><p>到右耳就只需要通过原点进行一个翻转，然后偏移定位就可以了</p>
+<li>到右耳就只需要通过原点进行一个翻转，然后偏移定位就可以了</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.ear.right&#123;</span><br><span class="line">  transform: scale(-1,1) translate(-26px,0) rotate(10deg);</span><br><span class="line">  animation: rotate-r var(--t) ease-out infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>需要注意的是这里scale和translate，rotate的顺序是有影响的，scale放在前面。<br>然后就是右耳的摆动动画</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   @keyframes rotate-r &#123;</span><br><span class="line">  0% &#123;transform: scale(-1,1) translate(-26px,0) rotate(10deg);&#125;</span><br><span class="line">  50% &#123;transform: scale(-1,1) translate(-26px,0) rotate(30deg);&#125;</span><br><span class="line">  100% &#123;transform: scale(-1,1) translate(-26px,0) rotate(10deg);&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<ul>
+<li>需要注意的是这里scale和translate，rotate的顺序是有影响的，scale放在前面。<br>
+然后就是右耳的摆动动画</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   @keyframes rotate-r &#123;</span><br><span class="line">  0% &#123;transform: scale(-1,1) translate(-26px,0) rotate(10deg);&#125;</span><br><span class="line">  50% &#123;transform: scale(-1,1) translate(-26px,0) rotate(30deg);&#125;</span><br><span class="line">  100% &#123;transform: scale(-1,1) translate(-26px,0) rotate(10deg);&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>其他部位就是大同小异了。(源码见下方github地址)</li>
 </ul>
+<p>github地址：<a href="https://github.com/ye19960607/induction/tree/master/css3-dog" target="_blank" rel="noopener">https://github.com/ye19960607/induction/tree/master/css3-dog</a><br>
+预览地址：<a href="https://ye19960607.github.io/induction/css3-dog/dog.html" target="_blank" rel="noopener">https://ye19960607.github.io/induction/css3-dog/dog.html</a></p>
 </li>
 </ul>
-<p>github地址：<a href="https://github.com/ye19960607/induction/tree/master/css3-dog" target="_blank" rel="noopener">https://github.com/ye19960607/induction/tree/master/css3-dog</a><br>预览地址：<a href="https://ye19960607.github.io/induction/css3-dog/dog.html" target="_blank" rel="noopener">https://ye19960607.github.io/induction/css3-dog/dog.html</a></p>
-</li>
-</ul>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
       
 
       
@@ -345,6 +358,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/09/11/封装一个求n到m之间的随机整数的函数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          封装一个求n到m之间的随机整数的函数
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/09/05/按钮边界动画/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">按钮边界动画</div>
@@ -374,7 +396,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html部分"><span class="toc-number">2.</span> <span class="toc-text">html部分</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">¶ 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html部分"><span class="toc-number">2.</span> <span class="toc-text">¶ html部分</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -525,6 +547,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
@@ -533,19 +563,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">case</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

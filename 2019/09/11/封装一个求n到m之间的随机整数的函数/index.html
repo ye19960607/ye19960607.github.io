@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>case | 长安</title>
+  <title>封装一个求n到m之间的随机整数的函数 | 长安</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="case">
-<meta property="og:url" content="http://yoursite.com/case/index.html">
+  <meta name="description" content="12345678910  &amp;lt;script&amp;gt;  var random=Math.random();  //生成一个从n到m的随机整数  function getRandom(n,m)&amp;#123;    var choise=m-n+1; //随机整数的个数    return Math.floor(Math.random()*choise+n);  &amp;#125;  console.log">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="封装一个求n到m之间的随机整数的函数">
+<meta property="og:url" content="http://yoursite.com/2019/09/11/封装一个求n到m之间的随机整数的函数/index.html">
 <meta property="og:site_name" content="长安">
+<meta property="og:description" content="12345678910  &amp;lt;script&amp;gt;  var random=Math.random();  //生成一个从n到m的随机整数  function getRandom(n,m)&amp;#123;    var choise=m-n+1; //随机整数的个数    return Math.floor(Math.random()*choise+n);  &amp;#125;  console.log">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-20T06:41:24.778Z">
+<meta property="og:updated_time" content="2019-09-11T00:38:16.968Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="case">
+<meta name="twitter:title" content="封装一个求n到m之间的随机整数的函数">
+<meta name="twitter:description" content="12345678910  &amp;lt;script&amp;gt;  var random=Math.random();  //生成一个从n到m的随机整数  function getRandom(n,m)&amp;#123;    var choise=m-n+1; //随机整数的个数    return Math.floor(Math.random()*choise+n);  &amp;#125;  console.log">
   
     <link rel="alternative" href="/atom.xml" title="长安" type="application/atom+xml">
   
@@ -159,27 +163,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-封装一个求n到m之间的随机整数的函数" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      case
+      封装一个求n到m之间的随机整数的函数
     </h1>
   
 
         
-        <a href="/case/index.html" class="archive-article-date">
-  	<time datetime="2019-08-20T06:41:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
+        <a href="/2019/09/11/封装一个求n到m之间的随机整数的函数/" class="archive-article-date">
+  	<time datetime="2019-09-10T23:41:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  &lt;script&gt;</span><br><span class="line">  var random=Math.random();</span><br><span class="line">  //生成一个从n到m的随机整数</span><br><span class="line">  function getRandom(n,m)&#123;</span><br><span class="line">    var choise=m-n+1; //随机整数的个数</span><br><span class="line">    return Math.floor(Math.random()*choise+n);</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(getRandom(1,5));</span><br><span class="line">  console.log(getRandom(10,13));</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>
+<p>js中Math对象有个random()的方法是取0-1之间的随机数</p>
+<p>如果是要取1-3之间的随机整数<br>
+那么结果可能是1，2，3，4四种可能<br>
+结果可能的数量是3-1+1=4中<br>
+而random取值是0-1，当random为0时在1-4中值应当为1<br>
+0*(4-1+1)+1=1<br>
+而当random为最大值0.9999…时应当为4<br>
+0.999999*(4-1+1)+1=4.99999…<br>
+加上一个Math.floor进行一个向下取整就可以得到我们预期的结果</p>
+</li>
+<li>
+<p>那假设要取得从n-m之前的随机整数，那就是总共可能为n,n+1,n+1…m.那么总数就为m-n+1<br>
+而当random取最小值0的时候取最小值n<br>
+0*(m-n+1)+?=n ==&gt;   ?=n<br>
+那么最后公式就应该是random*(m-n+1)+n</p>
+</li>
+<li>
+<p>加上一个向下取整就应该是</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.floor(Math.random()*(m-n+1)+n);</span><br></pre></td></tr></table></figure>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
       
 
       
@@ -208,6 +237,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -258,7 +298,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/case/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/11/封装一个求n到m之间的随机整数的函数/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -270,6 +310,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/11/纯css画一只动态狗/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">纯css画一只动态狗</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -305,7 +355,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="" data-title="case" data-url="http://yoursite.com/case/index.html"></div>
+	<div class="ds-thread" data-thread-key="封装一个求n到m之间的随机整数的函数" data-title="封装一个求n到m之间的随机整数的函数" data-url="http://yoursite.com/2019/09/11/封装一个求n到m之间的随机整数的函数/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -328,8 +378,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/case/index.html", 
-    sourceId: "",
+    url: "http://yoursite.com/2019/09/11/封装一个求n到m之间的随机整数的函数/", 
+    sourceId: "封装一个求n到m之间的随机整数的函数",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -338,7 +388,7 @@
   
 
   
-  <div id="SOHUCS" sid="" ></div> 
+  <div id="SOHUCS" sid="封装一个求n到m之间的随机整数的函数" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -379,7 +429,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

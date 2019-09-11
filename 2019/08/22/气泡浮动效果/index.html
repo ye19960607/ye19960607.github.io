@@ -185,16 +185,15 @@
         <img src="/2019/08/22/气泡浮动效果/1.gif" title="效果图">
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;bubble&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
 <p>先做一个盒子模型</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.bubble&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  width: 40px;</span><br><span class="line">  height: 40px;</span><br><span class="line">  background: #f1f1f1;</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  opacity: 0.5;</span><br><span class="line">  animation: flying 10s infinite ease-in;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>给盒子模型一个50%的border-radius将模型变成圆，也就是类似于气泡<br>然后给盒子设置一个动画效果flying</p>
+<p>给盒子模型一个50%的border-radius将模型变成圆，也就是类似于气泡<br>
+然后给盒子设置一个动画效果flying</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@keyframes flying&#123;</span><br><span class="line">  0%&#123;</span><br><span class="line">    bottom: -100px;</span><br><span class="line">    transform: translateX(0);</span><br><span class="line">  &#125;</span><br><span class="line">  50%&#123;</span><br><span class="line">    bottom: -100px;</span><br><span class="line">    transform: translateX(100px);</span><br><span class="line">  &#125;</span><br><span class="line">  100%&#123;</span><br><span class="line">    bottom: 1080px;</span><br><span class="line">    transform: translateX(-200px;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>设置动画效果flying</p>
-<p>github地址:<a href="https://github.com/ye19960607/case/tree/master/气泡浮动效果" target="_blank" rel="noopener">https://github.com/ye19960607/case/tree/master/气泡浮动效果</a><br>预览地址:<a href="https://ye19960607.github.io/case/气泡浮动效果/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/case/气泡浮动效果/index.html</a></p>
-
+<p>github地址:<a href="https://github.com/ye19960607/case/tree/master/%E6%B0%94%E6%B3%A1%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C" target="_blank" rel="noopener">https://github.com/ye19960607/case/tree/master/气泡浮动效果</a><br>
+预览地址:<a href="https://ye19960607.github.io/case/%E6%B0%94%E6%B3%A1%E6%B5%AE%E5%8A%A8%E6%95%88%E6%9E%9C/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/case/气泡浮动效果/index.html</a></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
       
 
       
@@ -491,6 +490,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
@@ -499,19 +506,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">case</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

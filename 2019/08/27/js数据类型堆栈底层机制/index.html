@@ -189,27 +189,32 @@
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let a = 12;</span><br><span class="line">let b = a;</span><br><span class="line">b = 13;</span><br><span class="line">consloe.log(a);</span><br><span class="line"></span><br><span class="line">let n = &#123;</span><br><span class="line">   name: 张三;</span><br><span class="line">&#125;;</span><br><span class="line">let m = n;</span><br><span class="line">m.name = &apos;李四&apos;;</span><br><span class="line">console.log(n.name);</span><br></pre></td></tr></table></figure>
-
 <a id="more"></a>
 <ul>
-<li>浏览器想要执行js代码<ul>
+<li>浏览器想要执行js代码
+<ul>
 <li>1.从电脑内存中分配出一块内存，用来执行代码(栈内存 =&gt; Stack)</li>
 <li>2.分配一个主线程用来自上而下执行js代码</li>
 </ul>
 </li>
 </ul>
-<h2 id="简单值得存储"><a href="#简单值得存储" class="headerlink" title="简单值得存储"></a>简单值得存储</h2><ul>
-<li>let a = 12<ul>
-<li><ol>
+<h2 id="简单值得存储"><a class="header-anchor" href="#简单值得存储" aria-hidden="true">¶</a> 简单值得存储</h2>
+<ul>
+<li>let a = 12
+<ul>
+<li>
+<ol>
 <li>创建变量a，放到当前栈内存变量存储区域中</li>
 </ol>
 </li>
-<li><ol start="2">
+<li>
+<ol start="2">
 <li>创建一个值12，把它存储到当前栈内存值区域中(简单的基本类型值是这样存储的，复杂的引用类型值不是这样做的)</li>
 </ol>
 </li>
-<li><ol start="3">
-<li>=为赋值，其实赋值是让变量和值相互关联的过程 </li>
+<li>
+<ol start="3">
+<li>=为赋值，其实赋值是让变量和值相互关联的过程</li>
 </ol>
 </li>
 </ul>
@@ -217,24 +222,30 @@
 </ul>
 <img src="/2019/08/27/js数据类型堆栈底层机制/基本类型.png" title="基本类型">
 <ul>
-<li>主线程工作流程<ul>
+<li>主线程工作流程
+<ul>
 <li>1.创建存储变量a，创建存储值12，将变量a与值12关联</li>
 <li>2.创建存储变量b，将变量b与值12关联</li>
 <li>3.创建存储值13，将变量b与值13关联(一个变量只能同时关联一个值)</li>
 </ul>
 </li>
 </ul>
-<h2 id="复杂值-引用类型值-的存储，也分为三个步骤："><a href="#复杂值-引用类型值-的存储，也分为三个步骤：" class="headerlink" title="复杂值(引用类型值)的存储，也分为三个步骤："></a>复杂值(引用类型值)的存储，也分为三个步骤：</h2><ul>
-<li>let n = {}<ul>
-<li><ol>
+<h2 id="复杂值(引用类型值)的存储，也分为三个步骤："><a class="header-anchor" href="#复杂值(引用类型值)的存储，也分为三个步骤：" aria-hidden="true">¶</a> 复杂值(引用类型值)的存储，也分为三个步骤：</h2>
+<ul>
+<li>let n = {}
+<ul>
+<li>
+<ol>
 <li>在内存中分配出一块新的内存，用来存储引用类型值(堆内存 =&gt; heap) =&gt;内存有一个16进制地址</li>
 </ol>
 </li>
-<li><ol start="2">
+<li>
+<ol start="2">
 <li>把对象中的键值对(属性名：属性值)依次存储到堆内存中</li>
 </ol>
 </li>
-<li><ol start="3">
+<li>
+<ol start="3">
 <li>把堆内存地址和变量关联起来</li>
 </ol>
 </li>
@@ -243,27 +254,24 @@
 </ul>
 <img src="/2019/08/27/js数据类型堆栈底层机制/引用类型.png" title="引用类型">
 <ul>
-<li>主线程工作流程<ul>
-<li>1.创建存储变量n，创建堆内存AAAFFF000，AAAFFF000中创建{name:”张三”}<br>同时在值存储空间中会有值AAAFFF000，并与变量n关联</li>
+<li>主线程工作流程
+<ul>
+<li>1.创建存储变量n，创建堆内存AAAFFF000，AAAFFF000中创建{name:“张三”}<br>
+同时在值存储空间中会有值AAAFFF000，并与变量n关联</li>
 <li>2.创建存储变量m，将变量b与值AAAFFF000关联</li>
-<li>3.修改堆内存AAAFFF000中属性名name的属性值为”李四”(n与m共用一个存储在堆内存中的值)</li>
+<li>3.修改堆内存AAAFFF000中属性名name的属性值为&quot;李四&quot;(n与m共用一个存储在堆内存中的值)</li>
 </ul>
 </li>
 </ul>
 <img src="/2019/08/27/js数据类型堆栈底层机制/定义.png" title="定义">
-
-
-
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let n = [10,20];</span><br><span class="line">let m = n;</span><br><span class="line">let x = m;</span><br><span class="line">m[0] = 100;</span><br><span class="line">x = [30,40];</span><br><span class="line">x[0] = 200;</span><br><span class="line">m = x;</span><br><span class="line">m[1] = 300;</span><br><span class="line">n[2] = 400;</span><br><span class="line">console.log(n,m,x;)</span><br></pre></td></tr></table></figure>
-
+<h3 id="题目"><a class="header-anchor" href="#题目" aria-hidden="true">¶</a> 题目</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let n = [10,20];</span><br><span class="line">let m = n;</span><br><span class="line">let x = m;</span><br><span class="line">m[0] = 100;</span><br><span class="line">x = [30,40];</span><br><span class="line">x[0] = 200;</span><br><span class="line">m = x;</span><br><span class="line">m[1] = 300;</span><br><span class="line">n[2] = 400;</span><br><span class="line">console.log(n,m,x;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let a = &#123;n:1&#125;;</span><br><span class="line">let b = a;</span><br><span class="line">a.x = b;</span><br></pre></td></tr></table></figure>
-
 <img src="/2019/08/27/js数据类型堆栈底层机制/练习题.png" title="练习题">
-
 <ul>
 <li>主要难点为在执行{x = [30,40]}时，栈内存会创建一个新的堆内存，一个新的空间去存储值。</li>
 </ul>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
       
 
       
@@ -405,7 +413,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简单值得存储"><span class="toc-number">1.</span> <span class="toc-text">简单值得存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂值-引用类型值-的存储，也分为三个步骤："><span class="toc-number">2.</span> <span class="toc-text">复杂值(引用类型值)的存储，也分为三个步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">2.1.</span> <span class="toc-text">题目</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简单值得存储"><span class="toc-number">1.</span> <span class="toc-text">¶ 简单值得存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂值(引用类型值)的存储，也分为三个步骤："><span class="toc-number">2.</span> <span class="toc-text">¶ 复杂值(引用类型值)的存储，也分为三个步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">2.1.</span> <span class="toc-text">¶ 题目</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -556,6 +564,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
@@ -564,19 +580,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">case</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

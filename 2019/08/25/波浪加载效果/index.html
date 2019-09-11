@@ -184,34 +184,34 @@
       
         <img src="/2019/08/25/波浪加载效果/1.gif" title="效果图">
 <a id="more"></a>
-
-<h3 id="html部分"><a href="#html部分" class="headerlink" title="html部分"></a>html部分</h3><ul>
-<li>先构建几个变换的模型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;middle&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar1&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar2&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar3&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar4&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar5&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar6&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar7&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar8&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="css部分"><a href="#css部分" class="headerlink" title="css部分"></a>css部分</h1><ul>
-<li><p>设置容器的居中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.middle&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  left: 50%;</span><br><span class="line">  transform: translate(-50%,-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置模型的属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.bar&#123;</span><br><span class="line">  width: 6px;</span><br><span class="line">  height: 60px;</span><br><span class="line">  background: white;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  transform-origin: bottom center;</span><br><span class="line">  animation: loading 1.5s ease-in-out infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>ransform-origin: bottom center设置每个模型变形的原点是底部中心。然后给每个模型一个动画效果loading </p>
+<h3 id="html部分"><a class="header-anchor" href="#html部分" aria-hidden="true">¶</a> html部分</h3>
 <ul>
-<li><p>给每个bar设置不同的animation-delay(动画开始时间)显现出波浪效果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.bar1&#123;</span><br><span class="line">  animation-delay: 0.1s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>最后再写一下loading</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@keyframes loading&#123;</span><br><span class="line">  0%&#123;</span><br><span class="line">    transform: scaleY(0.1);</span><br><span class="line">    background: #fff;</span><br><span class="line">  &#125;</span><br><span class="line">  50%&#123;</span><br><span class="line">    transform: scaleY(1);</span><br><span class="line">    background: #2ecc71;</span><br><span class="line">  &#125;</span><br><span class="line">  100%&#123;</span><br><span class="line">    transform: scaleY(0.1);</span><br><span class="line">    background: transparent;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>先构建几个变换的模型</li>
 </ul>
-<p>给bar不同阶段不同的y轴缩放效果和背景色。<br>达到模型长度的伸缩效果和背景色的渐变效果。</p>
-<p>github地址：<a href="https://github.com/ye19960607/case/tree/master/波浪加载效果" target="_blank" rel="noopener">https://github.com/ye19960607/case/tree/master/波浪加载效果</a><br>预览地址：<a href="https://ye19960607.github.io/case/波浪加载效果/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/case/波浪加载效果/index.html</a></p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;middle&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar1&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar2&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar3&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar4&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar5&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar6&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar7&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bar bar8&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="css部分"><a class="header-anchor" href="#css部分" aria-hidden="true">¶</a> css部分</h1>
+<ul>
+<li>设置容器的居中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.middle&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  left: 50%;</span><br><span class="line">  transform: translate(-50%,-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置模型的属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.bar&#123;</span><br><span class="line">  width: 6px;</span><br><span class="line">  height: 60px;</span><br><span class="line">  background: white;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  transform-origin: bottom center;</span><br><span class="line">  animation: loading 1.5s ease-in-out infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ransform-origin: bottom center设置每个模型变形的原点是底部中心。然后给每个模型一个动画效果loading</p>
+<ul>
+<li>给每个bar设置不同的animation-delay(动画开始时间)显现出波浪效果</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.bar1&#123;</span><br><span class="line">  animation-delay: 0.1s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>最后再写一下loading</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@keyframes loading&#123;</span><br><span class="line">  0%&#123;</span><br><span class="line">    transform: scaleY(0.1);</span><br><span class="line">    background: #fff;</span><br><span class="line">  &#125;</span><br><span class="line">  50%&#123;</span><br><span class="line">    transform: scaleY(1);</span><br><span class="line">    background: #2ecc71;</span><br><span class="line">  &#125;</span><br><span class="line">  100%&#123;</span><br><span class="line">    transform: scaleY(0.1);</span><br><span class="line">    background: transparent;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>给bar不同阶段不同的y轴缩放效果和背景色。<br>
+达到模型长度的伸缩效果和背景色的渐变效果。</p>
+<p>github地址：<a href="https://github.com/ye19960607/case/tree/master/%E6%B3%A2%E6%B5%AA%E5%8A%A0%E8%BD%BD%E6%95%88%E6%9E%9C" target="_blank" rel="noopener">https://github.com/ye19960607/case/tree/master/波浪加载效果</a><br>
+预览地址：<a href="https://ye19960607.github.io/case/%E6%B3%A2%E6%B5%AA%E5%8A%A0%E8%BD%BD%E6%95%88%E6%9E%9C/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/case/波浪加载效果/index.html</a></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
       
 
       
@@ -357,7 +357,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#html部分"><span class="toc-number">1.</span> <span class="toc-text">html部分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#css部分"><span class="toc-number"></span> <span class="toc-text">css部分</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#html部分"><span class="toc-number">1.</span> <span class="toc-text">¶ html部分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#css部分"><span class="toc-number"></span> <span class="toc-text">¶ css部分</span></a>
                     </div>
                 </span>
             </div>
@@ -508,6 +508,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
@@ -516,19 +524,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">case</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
