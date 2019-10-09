@@ -8,18 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>使用BEM设计模式构建网页 | 长安</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="¶ BEM代表块（Block），元素（Element），修饰符（Modifier）  模块 (没有前缀，多个单词用 - 连接) 元素 (元素在模块之后，可以有多个层级，以 __ 连接) 修饰 (某元素，或者某模块特别的状态，必须有一个状态名与状态值，使用 _ 连接)  ¶ 重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如：  严格的组件间交互限制（尽量减少Blo">
-<meta name="keywords" content="切图">
+  <meta name="keywords" content="切图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用BEM设计模式构建网页">
 <meta property="og:url" content="http://yoursite.com/2019/10/09/使用BEM设计模式构建网页/index.html">
 <meta property="og:site_name" content="长安">
-<meta property="og:description" content="¶ BEM代表块（Block），元素（Element），修饰符（Modifier）  模块 (没有前缀，多个单词用 - 连接) 元素 (元素在模块之后，可以有多个层级，以 __ 连接) 修饰 (某元素，或者某模块特别的状态，必须有一个状态名与状态值，使用 _ 连接)  ¶ 重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如：  严格的组件间交互限制（尽量减少Blo">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-09T06:06:11.467Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/09/使用BEM设计模式构建网页/1.gif">
+<meta property="og:updated_time" content="2019-10-09T06:13:08.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用BEM设计模式构建网页">
-<meta name="twitter:description" content="¶ BEM代表块（Block），元素（Element），修饰符（Modifier）  模块 (没有前缀，多个单词用 - 连接) 元素 (元素在模块之后，可以有多个层级，以 __ 连接) 修饰 (某元素，或者某模块特别的状态，必须有一个状态名与状态值，使用 _ 连接)  ¶ 重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如：  严格的组件间交互限制（尽量减少Blo">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/09/使用BEM设计模式构建网页/1.gif">
   
     <link rel="alternative" href="/atom.xml" title="长安" type="application/atom+xml">
   
@@ -183,7 +182,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <img src="/2019/10/09/使用BEM设计模式构建网页/1.gif" title="效果图">
 <a id="more"></a>
 <h2 id="BEM代表块（Block），元素（Element），修饰符（Modifier）"><a class="header-anchor" href="#BEM代表块（Block），元素（Element），修饰符（Modifier）" aria-hidden="true">¶</a> BEM代表块（Block），元素（Element），修饰符（Modifier）</h2>
 <ul>
@@ -200,8 +199,8 @@
 </ul>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">.header__nav&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  right: 20px;</span><br><span class="line">  height: 38px;</span><br><span class="line">  top: 50%;</span><br><span class="line">  margin-top: -19px;</span><br><span class="line">&#125;</span><br><span class="line">.header__nav-item&#123;</span><br><span class="line">  color: #292f35;</span><br><span class="line">  font-size: 14px;</span><br><span class="line">  display: block;</span><br><span class="line">  height: 38px;</span><br><span class="line">  line-height: 38px;</span><br><span class="line">  float: left;</span><br><span class="line">  margin-left: 40px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.header__nav-item:hover&#123;</span><br><span class="line">  color: #f01400;</span><br><span class="line">&#125;</span><br><span class="line">.header__nav-item_status_active&#123;</span><br><span class="line">  color: #f01400;</span><br><span class="line">&#125;</span><br><span class="line">.header__nav-item_status_active::after&#123;</span><br><span class="line">  content: &apos; &apos;;</span><br><span class="line">  display: block;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 2px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 0;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  background-color: #f01400;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上述例子就是严格采用了BEM模式的命名规则。虽然写起来复杂，看起来也并不美观，但是优点在于表意明确，能特别容易的清楚目标行准确的类名，可读性非常好。</p>
-<p>github地址：<a href="https://github.com/ye19960607/induction/tree/master/imooc" target="_blank" rel="noopener">https://github.com/ye19960607/induction/tree/master/imooc</a></p>
-<p>页面预览地址：<a href="https://ye19960607.github.io/induction/imooc/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/induction/imooc/index.html</a></p>
+<p>github地址：<a href="https://github.com/ye19960607/induction/tree/master/imooc" target="_blank" rel="noopener">https://github.com/ye19960607/induction/tree/master/imooc</a><br>
+页面预览地址：<a href="https://ye19960607.github.io/induction/imooc/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/induction/imooc/index.html</a></p>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
       
 
