@@ -160,6 +160,98 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用BEM设计模式构建网页" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/09/使用BEM设计模式构建网页/">使用BEM设计模式构建网页</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/09/使用BEM设计模式构建网页/" class="archive-article-date">
+  	<time datetime="2019-10-09T05:17:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+<a id="more"></a>
+<h2 id="BEM代表块（Block），元素（Element），修饰符（Modifier）"><a class="header-anchor" href="#BEM代表块（Block），元素（Element），修饰符（Modifier）" aria-hidden="true">¶</a> BEM代表块（Block），元素（Element），修饰符（Modifier）</h2>
+<ul>
+<li>模块 (没有前缀，多个单词用 - 连接)</li>
+<li>元素 (元素在模块之后，可以有多个层级，以 __ 连接)</li>
+<li>修饰 (某元素，或者某模块特别的状态，必须有一个状态名与状态值，使用 _ 连接)</li>
+</ul>
+<h2 id="重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如："><a class="header-anchor" href="#重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如：" aria-hidden="true">¶</a> 重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如：</h2>
+<ul>
+<li>严格的组件间交互限制（尽量减少Block之间的依赖）</li>
+<li>强制统一命名规范（环境级的强约束，开发人员必须遵守）</li>
+<li>灵活的逻辑分层（通过Redefinition level）</li>
+<li>基于状态的CSS和JS结构（Modifier）</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">.header__nav&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  right: 20px;</span><br><span class="line">  height: 38px;</span><br><span class="line">  top: 50%;</span><br><span class="line">  margin-top: -19px;</span><br><span class="line">&#125;</span><br><span class="line">.header__nav-item&#123;</span><br><span class="line">  color: #292f35;</span><br><span class="line">  font-size: 14px;</span><br><span class="line">  display: block;</span><br><span class="line">  height: 38px;</span><br><span class="line">  line-height: 38px;</span><br><span class="line">  float: left;</span><br><span class="line">  margin-left: 40px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.header__nav-item:hover&#123;</span><br><span class="line">  color: #f01400;</span><br><span class="line">&#125;</span><br><span class="line">.header__nav-item_status_active&#123;</span><br><span class="line">  color: #f01400;</span><br><span class="line">&#125;</span><br><span class="line">.header__nav-item_status_active::after&#123;</span><br><span class="line">  content: &apos; &apos;;</span><br><span class="line">  display: block;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 2px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 0;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  background-color: #f01400;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述例子就是严格采用了BEM模式的命名规则。虽然写起来复杂，看起来也并不美观，但是优点在于表意明确，能特别容易的清楚目标行准确的类名，可读性非常好。</p>
+<p>github地址：<a href="https://github.com/ye19960607/induction/tree/master/imooc" target="_blank" rel="noopener">https://github.com/ye19960607/induction/tree/master/imooc</a></p>
+<p>页面预览地址：<a href="https://ye19960607.github.io/induction/imooc/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/induction/imooc/index.html</a></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">切图</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/09/使用BEM设计模式构建网页/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js跨浏览器事件处理程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -542,84 +634,6 @@
 
 
   
-    <article id="post-文字显示图片背景" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/28/文字显示图片背景/">文字显示图片背景</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/28/文字显示图片背景/" class="archive-article-date">
-  	<time datetime="2019-08-28T09:35:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/2019/08/28/文字显示图片背景/1.png" title="效果图">
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">case</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/28/文字显示图片背景/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -728,6 +742,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">切图</a>
               </li>
              
               <li class="article-tag-list-item">

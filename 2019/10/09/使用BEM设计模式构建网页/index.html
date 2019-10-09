@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/8 | 长安</title>
+  <title>使用BEM设计模式构建网页 | 长安</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="长安">
-<meta property="og:url" content="http://yoursite.com/archives/2019/08/index.html">
+  <meta name="description" content="¶ BEM代表块（Block），元素（Element），修饰符（Modifier）  模块 (没有前缀，多个单词用 - 连接) 元素 (元素在模块之后，可以有多个层级，以 __ 连接) 修饰 (某元素，或者某模块特别的状态，必须有一个状态名与状态值，使用 _ 连接)  ¶ 重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如：  严格的组件间交互限制（尽量减少Blo">
+<meta name="keywords" content="切图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用BEM设计模式构建网页">
+<meta property="og:url" content="http://yoursite.com/2019/10/09/使用BEM设计模式构建网页/index.html">
 <meta property="og:site_name" content="长安">
+<meta property="og:description" content="¶ BEM代表块（Block），元素（Element），修饰符（Modifier）  模块 (没有前缀，多个单词用 - 连接) 元素 (元素在模块之后，可以有多个层级，以 __ 连接) 修饰 (某元素，或者某模块特别的状态，必须有一个状态名与状态值，使用 _ 连接)  ¶ 重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如：  严格的组件间交互限制（尽量减少Blo">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-09T06:06:11.467Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="长安">
+<meta name="twitter:title" content="使用BEM设计模式构建网页">
+<meta name="twitter:description" content="¶ BEM代表块（Block），元素（Element），修饰符（Modifier）  模块 (没有前缀，多个单词用 - 连接) 元素 (元素在模块之后，可以有多个层级，以 __ 连接) 修饰 (某元素，或者某模块特别的状态，必须有一个状态名与状态值，使用 _ 连接)  ¶ 重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如：  严格的组件间交互限制（尽量减少Blo">
   
     <link rel="alternative" href="/atom.xml" title="长安" type="application/atom+xml">
   
@@ -158,273 +163,238 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-使用BEM设计模式构建网页" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用BEM设计模式构建网页
+    </h1>
+  
+
+        
+        <a href="/2019/10/09/使用BEM设计模式构建网页/" class="archive-article-date">
+  	<time datetime="2019-10-09T05:17:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-09</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+<a id="more"></a>
+<h2 id="BEM代表块（Block），元素（Element），修饰符（Modifier）"><a class="header-anchor" href="#BEM代表块（Block），元素（Element），修饰符（Modifier）" aria-hidden="true">¶</a> BEM代表块（Block），元素（Element），修饰符（Modifier）</h2>
+<ul>
+<li>模块 (没有前缀，多个单词用 - 连接)</li>
+<li>元素 (元素在模块之后，可以有多个层级，以 __ 连接)</li>
+<li>修饰 (某元素，或者某模块特别的状态，必须有一个状态名与状态值，使用 _ 连接)</li>
+</ul>
+<h2 id="重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如："><a class="header-anchor" href="#重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如：" aria-hidden="true">¶</a> 重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如：</h2>
+<ul>
+<li>严格的组件间交互限制（尽量减少Block之间的依赖）</li>
+<li>强制统一命名规范（环境级的强约束，开发人员必须遵守）</li>
+<li>灵活的逻辑分层（通过Redefinition level）</li>
+<li>基于状态的CSS和JS结构（Modifier）</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">.header__nav&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  right: 20px;</span><br><span class="line">  height: 38px;</span><br><span class="line">  top: 50%;</span><br><span class="line">  margin-top: -19px;</span><br><span class="line">&#125;</span><br><span class="line">.header__nav-item&#123;</span><br><span class="line">  color: #292f35;</span><br><span class="line">  font-size: 14px;</span><br><span class="line">  display: block;</span><br><span class="line">  height: 38px;</span><br><span class="line">  line-height: 38px;</span><br><span class="line">  float: left;</span><br><span class="line">  margin-left: 40px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.header__nav-item:hover&#123;</span><br><span class="line">  color: #f01400;</span><br><span class="line">&#125;</span><br><span class="line">.header__nav-item_status_active&#123;</span><br><span class="line">  color: #f01400;</span><br><span class="line">&#125;</span><br><span class="line">.header__nav-item_status_active::after&#123;</span><br><span class="line">  content: &apos; &apos;;</span><br><span class="line">  display: block;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 2px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 0;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  background-color: #f01400;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述例子就是严格采用了BEM模式的命名规则。虽然写起来复杂，看起来也并不美观，但是优点在于表意明确，能特别容易的清楚目标行准确的类名，可读性非常好。</p>
+<p>github地址：<a href="https://github.com/ye19960607/induction/tree/master/imooc" target="_blank" rel="noopener">https://github.com/ye19960607/induction/tree/master/imooc</a></p>
+<p>页面预览地址：<a href="https://ye19960607.github.io/induction/imooc/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/induction/imooc/index.html</a></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/28/文字显示图片背景/" class="archive-article-date">
-  	<time datetime="2019-08-28T09:35:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/28/文字显示图片背景/">文字显示图片背景</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">case</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">切图</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/09/使用BEM设计模式构建网页/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/27/js数据类型堆栈底层机制/" class="archive-article-date">
-  	<time datetime="2019-08-27T14:23:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/20/js跨浏览器事件处理程序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js跨浏览器事件处理程序</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/27/js数据类型堆栈底层机制/">js数据类型堆栈底层机制</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#BEM代表块（Block），元素（Element），修饰符（Modifier）"><span class="toc-number">1.</span> <span class="toc-text">¶ BEM代表块（Block），元素（Element），修饰符（Modifier）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如："><span class="toc-number">2.</span> <span class="toc-text">¶ 重新定义模块、状态、逻辑分层，目的是尽可能解耦，追求高可维护性与工程化的美，比如：</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/27/按钮悬浮动态效果/" class="archive-article-date">
-  	<time datetime="2019-08-27T07:47:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
-</a>
-        </div>
-    	 
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="使用BEM设计模式构建网页" data-title="使用BEM设计模式构建网页" data-url="http://yoursite.com/2019/10/09/使用BEM设计模式构建网页/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/27/按钮悬浮动态效果/">按钮悬浮动态效果</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/10/09/使用BEM设计模式构建网页/", 
+    sourceId: "使用BEM设计模式构建网页",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">case</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/25/波浪加载效果/" class="archive-article-date">
-  	<time datetime="2019-08-25T12:11:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/25/波浪加载效果/">波浪加载效果</a>
-    </h1>
+  <div id="SOHUCS" sid="使用BEM设计模式构建网页" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">case</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/22/气泡浮动效果/" class="archive-article-date">
-  	<time datetime="2019-08-22T10:39:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/22/气泡浮动效果/">气泡浮动效果</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">case</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/21/鼠标悬浮按钮渐变效果/" class="archive-article-date">
-  	<time datetime="2019-08-21T06:30:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/21/鼠标悬浮按钮渐变效果/">鼠标悬浮按钮渐变效果</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">case</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/08/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/08/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -453,8 +423,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
