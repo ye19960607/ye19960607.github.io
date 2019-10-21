@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>简易布局小技巧 | 长安</title>
+  <title>使用vue写一个简易留言板 | 长安</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在平时做一些简单网页的布局上我们可能常常会需要做一些类似的模块">
-<meta name="keywords" content="前端">
+  <meta name="description" content="1234567891011121314151617181920&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;  var vm = new Vue(&amp;#123;    el:&amp;quot;#box&amp;quot;,    data:&amp;#123;      datalist:[],      mytext:&amp;quot;我是初始值&amp;quot;    &amp;#125;">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简易布局小技巧">
-<meta property="og:url" content="http://yoursite.com/2019/07/24/简易布局小技巧/index.html">
+<meta property="og:title" content="使用vue写一个简易留言板">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/使用vue写一个简易留言板/index.html">
 <meta property="og:site_name" content="长安">
-<meta property="og:description" content="在平时做一些简单网页的布局上我们可能常常会需要做一些类似的模块">
+<meta property="og:description" content="1234567891011121314151617181920&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;  var vm = new Vue(&amp;#123;    el:&amp;quot;#box&amp;quot;,    data:&amp;#123;      datalist:[],      mytext:&amp;quot;我是初始值&amp;quot;    &amp;#125;">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/07/24/简易布局小技巧/11.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/24/简易布局小技巧/22.png">
-<meta property="og:updated_time" content="2019-08-27T04:52:20.754Z">
+<meta property="og:updated_time" content="2019-10-21T14:36:40.043Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简易布局小技巧">
-<meta name="twitter:description" content="在平时做一些简单网页的布局上我们可能常常会需要做一些类似的模块">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/24/简易布局小技巧/11.png">
+<meta name="twitter:title" content="使用vue写一个简易留言板">
+<meta name="twitter:description" content="1234567891011121314151617181920&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;  var vm = new Vue(&amp;#123;    el:&amp;quot;#box&amp;quot;,    data:&amp;#123;      datalist:[],      mytext:&amp;quot;我是初始值&amp;quot;    &amp;#125;">
   
     <link rel="alternative" href="/atom.xml" title="长安" type="application/atom+xml">
   
@@ -166,39 +163,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-简易布局小技巧" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-使用vue写一个简易留言板" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      简易布局小技巧
+      使用vue写一个简易留言板
     </h1>
   
 
         
-        <a href="/2019/07/24/简易布局小技巧/" class="archive-article-date">
-  	<time datetime="2019-07-24T12:42:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
+        <a href="/2019/10/21/使用vue写一个简易留言板/" class="archive-article-date">
+  	<time datetime="2019-10-21T10:58:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在平时做一些简单网页的布局上我们可能常常会需要做一些类似的模块</p>
-<img src="/2019/07/24/简易布局小技巧/11.png" title="column"> 
-<a id="more"></a>
-<img src="/2019/07/24/简易布局小技巧/22.png" title="column"> 
-<p>如果每个模块都去设置宽高，设置浮动来固定位置会是件很麻烦的事情。<br>
-我们可以先写一个container容器把主体固定到页面中间位置，并且设置一个max-width属性让网页自适应。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">    display: block;</span><br><span class="line">    max-width:1080px;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后在每一列中我们可能需要不同大小的容器，那就继续写出不同宽度的column</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">.col-1,</span><br><span class="line">.col-2,</span><br><span class="line">.col-3,</span><br><span class="line">.col-4,</span><br><span class="line">.col-5,</span><br><span class="line">.col-6,</span><br><span class="line">.col-7,</span><br><span class="line">.col-8,</span><br><span class="line">.col-9&#123;</span><br><span class="line">    display: block;</span><br><span class="line">    position: relative;</span><br><span class="line">    min-height: 1px;</span><br><span class="line">    float: left;</span><br><span class="line">&#125;</span><br><span class="line">.col-1&#123;</span><br><span class="line">    width: 10%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-2&#123;</span><br><span class="line">    width: 20%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-3&#123;</span><br><span class="line">    width: 30%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-4&#123;</span><br><span class="line">    width: 40%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-5&#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-6&#123;</span><br><span class="line">    width: 60%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-7&#123;</span><br><span class="line">    width: 70%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-8&#123;</span><br><span class="line">    width: 80%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-9&#123;</span><br><span class="line">    width: 90%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样在之后的开发中只需要根据实际需求来选择合适的column就好了<br>
-demo的github地址:<a href="https://github.com/ye19960607/induction/tree/master/easy-layout" target="_blank" rel="noopener">https://github.com/ye19960607/induction/tree/master/easy-layout</a><br>
-预览地址:<a href="https://ye19960607.github.io/induction/easy-layout/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/induction/easy-layout/index.html</a></p>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  var vm = new Vue(&#123;</span><br><span class="line">    el:&quot;#box&quot;,</span><br><span class="line">    data:&#123;</span><br><span class="line">      datalist:[],</span><br><span class="line">      mytext:&quot;我是初始值&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">      //es6对象简写</span><br><span class="line">      handleAdd()&#123;</span><br><span class="line">        // console.log(this.text);</span><br><span class="line">        this.datalist.push(this.mytext)</span><br><span class="line">      &#125;,</span><br><span class="line">      handleDelClick(index)&#123;</span><br><span class="line">        // console.log(&quot;del&quot;,index)</span><br><span class="line">        this.datalist.splice(index,1)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+  <a id="more"></a>
+<h2 id="先明确一下留言板的功能，在输入框中输入内容点击按钮，将内容显示在下方，并附有删除按钮可以删除该条留言。"><a class="header-anchor" href="#先明确一下留言板的功能，在输入框中输入内容点击按钮，将内容显示在下方，并附有删除按钮可以删除该条留言。" aria-hidden="true">¶</a> 先明确一下留言板的功能，在输入框中输入内容点击按钮，将内容显示在下方，并附有删除按钮可以删除该条留言。</h2>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;text&quot; v-model=&quot;mytext&quot;&gt;</span><br><span class="line">  &lt;!-- 双向数据绑定 --&gt;</span><br><span class="line"></span><br><span class="line">  &lt;button @click=&quot;handleAdd()&quot;&gt;add&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li v-for=&quot;(data,index) in datalist&quot; v-if=&quot;data&quot;&gt;</span><br><span class="line">      &#123;&#123;data&#125;&#125;--&#123;&#123;index&#125;&#125;--&lt;button @click=&quot;handleDelClick(index)&quot;&gt;delete&lt;/button&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>基本的页面布局，一个输入框一个按钮和一个列表。</li>
+<li>用v-model将value与mytext绑定在一起</li>
+<li>在下方列表中遍历data</li>
+<li>给按钮绑定一个点击事件handleAdd</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@click=&quot;handleAdd() ==&gt;(等价于) v-on:click=&quot;handleAdd()</span><br><span class="line">&lt;!-- 这里使用了简写 --&gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">- 通过v-if进行判断当输入为空(null)时不显示在下方。</span><br><span class="line">- 同时在输入值为正常下，在mytext后显示一个按钮也绑定一个点击事件handleDelClick(index)</span><br></pre></td></tr></table></figure>
+<p>v-for=&quot;(data,index) in datalist&quot;</p>
+<pre><code>- 这里在事件中传入了参数（循环中的下标index）达到删除当前条数据的效果
+  
+
+github地址：https://github.com/ye19960607/induction/tree/master/vue/todolist
+预览地址：https://ye19960607.github.io/induction/vue/todolist/todolist.html
+
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css&quot;&gt;</code></pre>
+
       
 
       
@@ -232,7 +237,7 @@ demo的github地址:<a href="https://github.com/ye19960607/induction/tree/master
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -288,7 +293,7 @@ demo的github地址:<a href="https://github.com/ye19960607/induction/tree/master
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/24/简易布局小技巧/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/21/使用vue写一个简易留言板/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -302,18 +307,9 @@ demo的github地址:<a href="https://github.com/ye19960607/induction/tree/master
   
 <nav id="article-nav">
   
-    <a href="/2019/07/30/简单的响应式布局/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          简单的响应式布局
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/17/七月 你好/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">七月 你好</div>
+    <a href="/2019/10/09/使用BEM设计模式构建网页/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用BEM设计模式构建网页</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -340,7 +336,7 @@ demo的github地址:<a href="https://github.com/ye19960607/induction/tree/master
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先明确一下留言板的功能，在输入框中输入内容点击按钮，将内容显示在下方，并附有删除按钮可以删除该条留言。"><span class="toc-number">1.</span> <span class="toc-text">¶ 先明确一下留言板的功能，在输入框中输入内容点击按钮，将内容显示在下方，并附有删除按钮可以删除该条留言。</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -354,7 +350,7 @@ demo的github地址:<a href="https://github.com/ye19960607/induction/tree/master
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="简易布局小技巧" data-title="简易布局小技巧" data-url="http://yoursite.com/2019/07/24/简易布局小技巧/"></div>
+	<div class="ds-thread" data-thread-key="使用vue写一个简易留言板" data-title="使用vue写一个简易留言板" data-url="http://yoursite.com/2019/10/21/使用vue写一个简易留言板/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -377,8 +373,8 @@ demo的github地址:<a href="https://github.com/ye19960607/induction/tree/master
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/07/24/简易布局小技巧/", 
-    sourceId: "简易布局小技巧",
+    url: "http://yoursite.com/2019/10/21/使用vue写一个简易留言板/", 
+    sourceId: "使用vue写一个简易留言板",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -387,7 +383,7 @@ demo的github地址:<a href="https://github.com/ye19960607/induction/tree/master
   
 
   
-  <div id="SOHUCS" sid="简易布局小技巧" ></div> 
+  <div id="SOHUCS" sid="使用vue写一个简易留言板" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
