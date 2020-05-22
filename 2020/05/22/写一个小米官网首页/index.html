@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>按钮边界动画 | 长安</title>
+  <title>写一个小米官网首页 | 长安</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="css,case">
+  <meta name="keywords" content="html,css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="按钮边界动画">
-<meta property="og:url" content="http://yoursite.com/2019/09/05/按钮边界动画/index.html">
+<meta property="og:title" content="写一个小米官网首页">
+<meta property="og:url" content="http://yoursite.com/2020/05/22/写一个小米官网首页/index.html">
 <meta property="og:site_name" content="长安">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/09/05/按钮边界动画/1.gif">
-<meta property="og:updated_time" content="2019-09-08T12:51:58.783Z">
+<meta property="og:image" content="http://yoursite.com/2020/05/22/写一个小米官网首页/1.png">
+<meta property="og:updated_time" content="2020-05-22T15:01:08.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="按钮边界动画">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/05/按钮边界动画/1.gif">
+<meta name="twitter:title" content="写一个小米官网首页">
+<meta name="twitter:image" content="http://yoursite.com/2020/05/22/写一个小米官网首页/1.png">
   
     <link rel="alternative" href="/atom.xml" title="长安" type="application/atom+xml">
   
@@ -162,53 +162,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-按钮边界动画" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-写一个小米官网首页" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      按钮边界动画
+      写一个小米官网首页
     </h1>
   
 
         
-        <a href="/2019/09/05/按钮边界动画/" class="archive-article-date">
-  	<time datetime="2019-09-05T09:01:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
+        <a href="/2020/05/22/写一个小米官网首页/" class="archive-article-date">
+  	<time datetime="2020-05-22T14:50:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/2019/09/05/按钮边界动画/1.gif" title="效果图">
+        <img src="/2020/05/22/写一个小米官网首页/1.png" title="效果图">
 <a id="more"></a>
-<h2 id="html部分"><a class="header-anchor" href="#html部分" aria-hidden="true">¶</a> html部分</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#&quot;&gt;</span><br><span class="line">  &lt;span&gt;&lt;/span&gt;</span><br><span class="line">  &lt;span&gt;&lt;/span&gt;</span><br><span class="line">  &lt;span&gt;&lt;/span&gt;</span><br><span class="line">  &lt;span&gt;&lt;/span&gt;</span><br><span class="line">  button</span><br><span class="line">&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>一个a标签里面几个span用来做渐变效果</li>
-</ul>
-<h2 id="css部分"><a class="header-anchor" href="#css部分" aria-hidden="true">¶</a> css部分</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">a&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  left: 50%;</span><br><span class="line">  transform: translate(-50%,-50%);</span><br><span class="line">  color: #1670f0;</span><br><span class="line">  padding: 30ps 60px;</span><br><span class="line">  font-size: 30px;</span><br><span class="line">  letter-spacing: 2px;</span><br><span class="line">  text-transform: uppercase;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">  box-shadow: 0 20px 50px rgba(0, 0, 0, .5);</span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a:before &#123;</span><br><span class="line">  content: &apos;&apos;;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 2px;</span><br><span class="line">  left: 2px;</span><br><span class="line">  bottom: 2px;</span><br><span class="line">  width: 50%;</span><br><span class="line">  background: rgba(255, 255, 255, 0.05);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p>先写下a标签的定位内边距字体颜色阴影。</p>
-</li>
-<li>
-<p>再就是a标签前span标签也是边界的效果</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a span:nth-child(1)&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height:2px;</span><br><span class="line">  background: linear-gradient(to right, #0c002b,#1779ff);</span><br><span class="line">  animation: animate1 2s linear infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>这里给了span标签一个animate1的动画效果</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@keyframes animate1&#123;</span><br><span class="line">  0%&#123;</span><br><span class="line">    transform: translateX(-100%)</span><br><span class="line">  &#125;</span><br><span class="line">  100%&#123;</span><br><span class="line">    transform: translateX(100%)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>由于四个边界上动画只涉及到x，y轴前后的变化这里就只写一个(源码见github)</li>
-</ul>
-<p>github地址：<a href="https://github.com/ye19960607/case/tree/master/%E6%8C%89%E9%92%AE%E8%BE%B9%E7%95%8C%E5%8A%A8%E7%94%BB" target="_blank" rel="noopener">https://github.com/ye19960607/case/tree/master/按钮边界动画</a><br>
-预览地址：<a href="https://ye19960607.github.io/case/%E6%8C%89%E9%92%AE%E8%BE%B9%E7%95%8C%E5%8A%A8%E7%94%BB/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/case/按钮边界动画/index.html</a></p>
+<h2 id="一个练习页面"><a class="header-anchor" href="#一个练习页面" aria-hidden="true">¶</a> 一个练习页面</h2>
+<p>预览地址：<a href="https://ye19960607.github.io/static-page//xiaomi/index.html" target="_blank" rel="noopener">https://ye19960607.github.io/static-page//xiaomi/index.html</a><br>
+github地址：<a href="https://github.com/ye19960607/static-page/tree/master/xiaomi" target="_blank" rel="noopener">https://github.com/ye19960607/static-page/tree/master/xiaomi</a></p>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
       
 
@@ -243,11 +221,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">case</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
         		</li>
       		
 		</ul>
@@ -303,7 +281,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/05/按钮边界动画/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/22/写一个小米官网首页/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -317,18 +295,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/09/11/纯css画一只动态狗/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          纯css画一只动态狗
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/02/背景流星效果/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">背景流星效果</div>
+    <a href="/2019/10/22/使用vue构建购物车模型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用vue构建购物车模型</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -355,7 +324,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#html部分"><span class="toc-number">1.</span> <span class="toc-text">¶ html部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css部分"><span class="toc-number">2.</span> <span class="toc-text">¶ css部分</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一个练习页面"><span class="toc-number">1.</span> <span class="toc-text">¶ 一个练习页面</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -369,7 +338,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="按钮边界动画" data-title="按钮边界动画" data-url="http://yoursite.com/2019/09/05/按钮边界动画/"></div>
+	<div class="ds-thread" data-thread-key="写一个小米官网首页" data-title="写一个小米官网首页" data-url="http://yoursite.com/2020/05/22/写一个小米官网首页/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -392,8 +361,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/09/05/按钮边界动画/", 
-    sourceId: "按钮边界动画",
+    url: "http://yoursite.com/2020/05/22/写一个小米官网首页/", 
+    sourceId: "写一个小米官网首页",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -402,7 +371,7 @@
   
 
   
-  <div id="SOHUCS" sid="按钮边界动画" ></div> 
+  <div id="SOHUCS" sid="写一个小米官网首页" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
